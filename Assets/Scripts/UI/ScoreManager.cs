@@ -26,8 +26,7 @@ public class ScoreManager : MonoBehaviour
     private void Awake()
     {
         _bestScore = PlayerPrefs.GetInt(_bestScoreKey, 0);
-
-        Debug.Log(_bestScore);
+        BestScoreChanged?.Invoke(_bestScore);
     }
 
     private void AddScore()
