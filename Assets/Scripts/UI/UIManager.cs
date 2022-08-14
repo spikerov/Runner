@@ -5,9 +5,9 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] protected TMP_Text _score;
-    [SerializeField] protected TMP_Text _bestScore;
-    [SerializeField] protected PanelGameOver _panelGameOver;
+    [SerializeField] private TMP_Text _score;
+    [SerializeField] private TMP_Text _bestScore;
+    [SerializeField] private PanelGameOver _panelGameOver;
 
     private void OnEnable()
     {

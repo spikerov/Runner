@@ -4,15 +4,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class PanelGameOver : UIManager
+public class PanelGameOver : MonoBehaviour
 {
-    private TMP_Text _collectedСoins;
-    private TMP_Text _bestСollection;
+    [SerializeField] private ScoreManager _scoreManager;
+
+    [SerializeField] private TMP_Text _collectedСoins;
+    [SerializeField] private TMP_Text _bestСollection;
 
     private void Start()
     {
-        _collectedСoins = _score;
-        _bestСollection = _bestScore;
+        _collectedСoins.text = _scoreManager.Score.ToString();
+        _bestСollection.text = _scoreManager.BestScore.ToString(); ;
     }
 
     public void OnButtonClickRestart()

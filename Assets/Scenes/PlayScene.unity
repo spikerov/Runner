@@ -647,7 +647,7 @@ GameObject:
   - component: {fileID: 641385979}
   - component: {fileID: 641385978}
   m_Layer: 5
-  m_Name: Text Coins
+  m_Name: Text Best
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -670,7 +670,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 150.8, y: 0}
+  m_AnchoredPosition: {x: 124, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &641385978
@@ -1591,9 +1591,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 726b44f1ee490914c9e97bfc4378f640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _score: {fileID: 1582008929}
-  _bestScore: {fileID: 1730899225}
-  _panelGameOver: {fileID: 1216256583}
+  _scoreManager: {fileID: 1380019973}
+  "_collected\u0421oins": {fileID: 1566438432}
+  "_best\u0421ollection": {fileID: 641385978}
 --- !u!1 &1380019972
 GameObject:
   m_ObjectHideFlags: 0

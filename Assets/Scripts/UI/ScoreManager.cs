@@ -8,6 +8,9 @@ public class ScoreManager : MonoBehaviour
     private int _score = 0;
     private int _bestScore;
 
+    public int Score => _score;
+    public int BestScore => _bestScore;
+
     private const string _bestScoreKey = "Best Score";
 
     public static UnityAction<int> ScoreChanged;
