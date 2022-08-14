@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerMover : MonoBehaviour
 {
     [SerializeField] private PlayerAnimation _playerAnimation;
+    [SerializeField] private SoundManager _soundManager;
     [SerializeField] private float _speed;
     [SerializeField] private float _jumpForce;
     [SerializeField] private float _laneChangeSpeed = 15;
@@ -38,11 +39,13 @@ public class PlayerMover : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow) && _pointFinish > -_laneOffset)
         {
             MoveHorizontal(-_laneChangeSpeed);
+            _soundManager.PlayChangeTrack();
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow) && _pointFinish < _laneOffset)
         {
             MoveHorizontal(_laneChangeSpeed);
+            _soundManager.PlayChangeTrack();
         }
 
         if (Input.GetKey(KeyCode.Space) && isGround == true)
@@ -89,6 +92,7 @@ public class PlayerMover : MonoBehaviour
     private void OnDead()
     {
         _playerAnimation.RockCollision();
+        _soundManager.PlayCollision();
     }
 
     IEnumerator MoveCoroutine(float vectorX)
