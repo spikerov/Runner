@@ -46,7 +46,6 @@ public class ObjectSpawner : SpawnedOdjects
     {
         if (TryGetObject(out GameObject locality))
         {
-            Debug.Log("object" + number++);
             _zDistanceBetweenObject = Random.Range(_minDistanceBetwenObject, _maxDistanceBetwenObject);
             _spawnPositionX = _xPositionSpawnObject[Random.Range(0, _xPositionSpawnObject.Count)];
             locality.SetActive(true);

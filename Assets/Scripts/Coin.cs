@@ -7,7 +7,6 @@ using UnityEngine.Events;
 public class Coin : MonoBehaviour 
 {
 	[SerializeField] private bool rotate;
-	[SerializeField] private float rotationSpeed;
 	[SerializeField] private AudioClip collectSound;
 	[SerializeField] private GameObject collectEffect;
 
@@ -21,14 +20,6 @@ public class Coin : MonoBehaviour
 			OnCoin?.Invoke();
 		}
     }
-
-    void Update () {
-
-		if (rotate)
-        {
-			transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime, Space.World);
-        }
-	}
 
 	public void Collect()
 	{

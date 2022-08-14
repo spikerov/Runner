@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMover : MonoBehaviour
 {
+    [SerializeField] private PlayerAnimation _playerAnimation;
     [SerializeField] private float _speed;
     [SerializeField] private float _jumpForce;
     [SerializeField] private float _laneChangeSpeed = 15;
@@ -90,5 +91,6 @@ public class PlayerMover : MonoBehaviour
     public void Jump()
     {
         _rigidbody.velocity = Vector3.up * _jumpForce;
+        _playerAnimation.StartJumpAnimation();
     }
 }
