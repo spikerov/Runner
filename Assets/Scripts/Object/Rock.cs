@@ -9,7 +9,6 @@ public class Rock : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        Debug.Log("ROCK");
         if (collider.TryGetComponent<Player>(out Player player))
         {
             OnRock?.Invoke();
