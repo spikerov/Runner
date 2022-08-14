@@ -11,8 +11,8 @@ public class PanelGameOver : UIManager
 
     private void Start()
     {
- //       _collectedСoins = _score;
-//        _bestСollection = _bestScore;
+        _collectedСoins = _score;
+        _bestСollection = _bestScore;
     }
 
     public void OnButtonClickRestart()

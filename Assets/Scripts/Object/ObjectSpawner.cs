@@ -13,8 +13,8 @@ public class ObjectSpawner : SpawnedOdjects
     private int _zDistanceBetweenObject;
     private int number = 0;
     private int _startSpawnCountLocality = 30;
-    private float _spawnPositionZ = 5;
-    private float _spawnPositionX = 5;
+    private float _spawnPositionZ = 10;
+    private float _spawnPositionX = 0;
     private List<float> _xPositionSpawnObject = new List<float> { -0.8f, 0f, 0.8f };
 
     private void OnEnable()
