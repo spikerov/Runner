@@ -18,6 +18,16 @@ public class PlayerMover : MonoBehaviour
     private bool isGround = true;
     private Coroutine movingCoroutine;
 
+    private void OnEnable()
+    {
+        Rock.OnRock += OnDead;
+    }
+
+    private void OnDisable()
+    {
+        Rock.OnRock -= OnDead;
+    }
+
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -56,6 +66,12 @@ public class PlayerMover : MonoBehaviour
         }
     }
 
+    public void Jump()
+    {
+        _rigidbody.velocity = Vector3.up * _jumpForce;
+        _playerAnimation.StartJumpAnimation();
+    }
+
     private void MoveHorizontal(float speed)
     {
         _pointStart = _pointFinish;
@@ -68,6 +84,11 @@ public class PlayerMover : MonoBehaviour
         }
 
         movingCoroutine = StartCoroutine(MoveCoroutine(speed));
+    }
+
+    private void OnDead()
+    {
+        _playerAnimation.RockCollision();
     }
 
     IEnumerator MoveCoroutine(float vectorX)
@@ -86,11 +107,5 @@ public class PlayerMover : MonoBehaviour
         _rigidbody.velocity = Vector3.zero;
         transform.position = new Vector3(_pointFinish, transform.position.y, transform.position.z);
         _chamgingTrack = false;
-    }
-
-    public void Jump()
-    {
-        _rigidbody.velocity = Vector3.up * _jumpForce;
-        _playerAnimation.StartJumpAnimation();
     }
 }

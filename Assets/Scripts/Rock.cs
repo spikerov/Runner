@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Rock : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static UnityAction OnRock;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider collider)
     {
-        
+        Debug.Log("ROCK");
+        if (collider.TryGetComponent<Player>(out Player player))
+        {
+            OnRock?.Invoke();
+        }
     }
 }
