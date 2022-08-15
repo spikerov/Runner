@@ -8,7 +8,7 @@ public class SpawnedOdjects : MonoBehaviour
     [SerializeField] private GameObject _container;
 
     private List<GameObject> _objects = new List<GameObject>();
-    private List<GameObject> _inactiveObjects = new List<GameObject>();
+    protected List<GameObject> _inactiveObjects = new List<GameObject>();
 
     private int _minCountInactive = 10;
 

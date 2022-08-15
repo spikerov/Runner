@@ -12,7 +12,7 @@ public class ObjectSpawner : SpawnedOdjects
     private List<GameObject> _activeObject = new List<GameObject>();
     private int _zDistanceBetweenObject;
     private int number = 0;
-    private int _startSpawnCountLocality = 30;
+    private int _startSpawnCountLocality = 20;
     private float _spawnPositionZ = 10;
     private float _spawnPositionX = 0;
     private List<float> _xPositionSpawnObject = new List<float> { -0.8f, 0f, 0.8f };
@@ -44,20 +44,21 @@ public class ObjectSpawner : SpawnedOdjects
 
     public void ActivateObject()
     {
-        if (TryGetObject(out GameObject locality))
+        if (TryGetObject(out GameObject tile))
         {
             _zDistanceBetweenObject = Random.Range(_minDistanceBetwenObject, _maxDistanceBetwenObject);
             _spawnPositionX = _xPositionSpawnObject[Random.Range(0, _xPositionSpawnObject.Count)];
-            locality.SetActive(true);
-            locality.transform.position = new Vector3(_spawnPositionX, 0, _spawnPositionZ);
+            tile.SetActive(true);
+            tile.transform.position = new Vector3(_spawnPositionX, 0, _spawnPositionZ);
             _spawnPositionZ += _zDistanceBetweenObject;
-            _activeObject.Add(locality);
+            _activeObject.Add(tile);
         }
     }
 
     private void DeactivateObject()
     {
         _activeObject[0].SetActive(false);
+        _inactiveObjects.Add(_activeObject[0]);
         _activeObject.RemoveAt(0);
     }
 
@@ -67,6 +68,7 @@ public class ObjectSpawner : SpawnedOdjects
         {
             if (_activeObject[i].activeSelf == false)
             {
+                _inactiveObjects.Add(_activeObject[i]);
                 _activeObject.RemoveAt(i);
                 ActivateObject();
             }
