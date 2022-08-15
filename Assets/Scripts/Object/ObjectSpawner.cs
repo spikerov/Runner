@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,7 +10,6 @@ public class ObjectSpawner : SpawnedOdjects
 
     private List<GameObject> _activeObject = new List<GameObject>();
     private int _zDistanceBetweenObject;
-    private int number = 0;
     private int _startSpawnCountLocality = 20;
     private float _spawnPositionZ = 10;
     private float _spawnPositionX = 0;

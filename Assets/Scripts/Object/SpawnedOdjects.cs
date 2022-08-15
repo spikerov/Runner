@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,17 +24,6 @@ public class SpawnedOdjects : MonoBehaviour
 
     protected bool TryGetObject(out GameObject result)
     {
-        if (_inactiveObjects.Count < _minCountInactive)
-        {
-            foreach (var locality in _objects)
-            {
-                if (locality.activeSelf == false)
-                {
-                    _inactiveObjects.Add(locality);
-                }
-            }
-        }
-
         result = _inactiveObjects[Random.Range(0, _inactiveObjects.Count - 1)];
         _inactiveObjects.Remove(result);
 

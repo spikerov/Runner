@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
@@ -7,13 +5,16 @@ public class PlayerAnimation : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
 
+    private const string _jumpTrigger = "isJumping";
+    private const string _fallTrigger = "isFall";
+
     public void StartJumpAnimation()
     {
-        _animator.SetTrigger("isJumping");
+        _animator.SetTrigger(_jumpTrigger);
     }
 
     public void RockCollision()
     {
-        _animator.SetTrigger("isFall");
+        _animator.SetTrigger(_fallTrigger);
     }
 }

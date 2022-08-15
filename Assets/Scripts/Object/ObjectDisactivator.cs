@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class ObjectDisactivator : MonoBehaviour
 {
     [SerializeField] private ObjectSpawner _objectSpawner;
+
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.TryGetComponent<Coin>(out Coin coin))

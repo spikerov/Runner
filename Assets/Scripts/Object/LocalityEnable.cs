@@ -1,5 +1,3 @@
 using UnityEngine;
 
-public class LocalityEnable : MonoBehaviour
-{
-}
+public class LocalityEnable : MonoBehaviour {}
